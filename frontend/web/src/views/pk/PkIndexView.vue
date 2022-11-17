@@ -7,7 +7,7 @@
 <script>
 import PlayGround from '../../components/PlayGround.vue'
 import MatchGround from '../../components/MatchGround.vue'
-import ResultBoard from '../../components/ResultBoard.vue';
+import ResultBoard from '../../components/ResultBoard.vue'
 import { onMounted, onUnmounted } from 'vue'
 import { useStore } from 'vuex'
 
@@ -20,6 +20,8 @@ export default {
     setup() {
         const store = useStore();
         const socketUrl = `ws://127.0.0.1:3000/websocket/${store.state.user.token}/`;
+
+        store.commit("updateLoser", "none");
 
         let socket = null;
         onMounted(() => {
@@ -43,7 +45,7 @@ export default {
                     });
                     setTimeout(() => {
                         store.commit("updateStatus", "playing");
-                    }, 2000);
+                    }, 200);
                     store.commit("updateGame", data.game);
                 } else if (data.event === "move") {
                     console.log(data);
@@ -80,5 +82,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

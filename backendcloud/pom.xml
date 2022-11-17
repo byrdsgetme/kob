@@ -5,6 +5,7 @@
     <modules>
         <module>machingsystem</module>
         <module>backend</module>
+        <module>botrunningsystem</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

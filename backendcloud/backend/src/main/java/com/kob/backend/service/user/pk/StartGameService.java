@@ -8,5 +8,5 @@ package com.kob.backend.service.user.pk;
  * @Date：2022/11/14 17:29
  */
 public interface StartGameService {
-    String startGame(Integer aId, Integer bId);
+    String startGame(Integer aId, Integer aBotId, Integer bId, Integer bBotId);
 }
